@@ -10,17 +10,12 @@ public class Order {
 	private double totalprice;
 	private String date;
 
-	public Order(Customer customer_id, double totalPrice, String date) {
-		this.setCustomer_id(customer_id);
-		this.setTotalprice(totalPrice);
-		this.setDate(date);
-	}
-
-	public Order(Customer customer_id, Long id, double totalPrice, String date) {
-		this.setId(id);
-		this.setCustomer_id(customer_id);
-		this.setTotalprice(totalPrice);
-		this.setDate(date);
+	public Order(Customer customer_id, Long id, double totalprice, String date) {
+		super();
+		this.customer_id = customer_id;
+		this.id = id;
+		this.totalprice = totalprice;
+		this.date = date;
 	}
 
 	public Customer getCustomer_id() {

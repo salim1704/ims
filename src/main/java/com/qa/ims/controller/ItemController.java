@@ -39,9 +39,10 @@ public class ItemController implements CrudController<Item> {
 		Double price = utils.getDouble();
 		LOGGER.info("Please enter amount in stock");
 		Long stock = utils.getLong();
-		Item item = itemDAO.create(new Item(name, price, stock));
 		LOGGER.info("Item added");
+		Item item = itemDAO.create(new Item(name, price, stock));
 		return item;
+
 	}
 
 	@Override
@@ -61,7 +62,7 @@ public class ItemController implements CrudController<Item> {
 
 	@Override
 	public int delete() {
-		LOGGER.info("Please enter the id of the customer you would like to delete");
+		LOGGER.info("Please enter the id of the item you would like to delete");
 		Long id = utils.getLong();
 		LOGGER.info("Item deleted");
 		return itemDAO.delete(id);

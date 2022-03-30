@@ -44,7 +44,7 @@ public class Item {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-
+	
 	public Long getStock() {
 		return stock;
 	}
