@@ -29,7 +29,7 @@ public class Item {
 		this.id = id;
 	}
 
-	public String getname() {
+	public String getName() {
 		return name;
 	}
 
