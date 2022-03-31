@@ -8,16 +8,25 @@ public class Order {
 	private Customer customer_id;
 	private Long id;
 	private double totalprice;
-	private String date;
+	private String datePlaced;
+	private List<Item> OrderItems = new ArrayList<>();
 
-	public Order(Customer customer_id, Long id, double totalprice, String date) {
+	public Order(Customer customer_id, Long id, double totalprice, String datePlaced) {
 		super();
 		this.customer_id = customer_id;
 		this.id = id;
 		this.totalprice = totalprice;
-		this.date = date;
-	}
+		this.datePlaced = datePlaced;
+		
 
+	}
+	public Order( Long id, Customer customer_id, double totalprice, String datePlaced) {
+		super();
+		this.id = id;
+		this.customer_id = customer_id;
+		this.totalprice = totalprice;
+		this.datePlaced = datePlaced;
+	}
 	public Customer getCustomer_id() {
 		return customer_id;
 	}
@@ -42,23 +51,31 @@ public class Order {
 		this.totalprice = totalprice;
 	}
 
-	public String getDate() {
-		return date;
+	public String getdatePlaced() {
+		return datePlaced;
 	}
 
-	public void setDate(String date) {
-		this.date = date;
+	public void setdatePlaced(String datePlaced) {
+		this.datePlaced = datePlaced;
+	}
+
+	public List<Item> getOrderItems() {
+		return OrderItems;
+	}
+
+	public void setOrderItems(List<Item> orderItems) {
+		OrderItems = orderItems;
 	}
 
 	@Override
 	public String toString() {
-		return "Order [customer_id=" + customer_id + ", id=" + id + ", totalprice=" + totalprice + ", date=" + date
-				+ "]";
+		return "Order [customer_id=" + customer_id + ", id=" + id + ", totalprice=" + totalprice + ", datePlaced=" + datePlaced
+				+ ", OrderItems=" + OrderItems + "]";
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(customer_id, date, id, totalprice);
+		return Objects.hash(OrderItems, customer_id, datePlaced, id, totalprice);
 	}
 
 	@Override
@@ -70,8 +87,8 @@ public class Order {
 		if (getClass() != obj.getClass())
 			return false;
 		Order other = (Order) obj;
-		return Objects.equals(customer_id, other.customer_id) && Objects.equals(date, other.date)
-				&& Objects.equals(id, other.id)
+		return Objects.equals(OrderItems, other.OrderItems) && Objects.equals(customer_id, other.customer_id)
+				&& Objects.equals(datePlaced, other.datePlaced) && Objects.equals(id, other.id)
 				&& Double.doubleToLongBits(totalprice) == Double.doubleToLongBits(other.totalprice);
 	}
 
