@@ -5,17 +5,48 @@ import java.util.List;
 import java.util.Objects;
 
 public class Order {
-	private Customer customer_id;
 	private Long id;
+	private Customer customer_id;
 	private double totalprice;
-	private String date;
+	private List<Item> OrderItems = new ArrayList<>();
 
-	public Order(Customer customer_id, Long id, double totalprice, String date) {
+	public Order() {
+	}
+	
+	public Order(Long id, Customer customer_id, List<Item> orderItems, double totalPrice) {
+		this.setId(id);
+		this.setCustomer_id(customer_id);
+		this.setOrderItems(orderItems);
+		this.setTotalprice(totalPrice);
+	}
+
+	public Order(Customer customer_id, Long id, double totalprice, List<Item> orderItems) {
+		this.setCustomer_id(customer_id);
+		this.setId(id);
+		this.setTotalprice(totalprice);
+		this.setOrderItems(orderItems);
+
+	}
+
+	public Order(Long id, Customer customer_id, double totalprice) {
+		this.setId(id);
+		this.setCustomer_id(customer_id);
+		this.setTotalprice(totalprice);
+	}
+
+	public Order(Customer customer_id) {
+		this.setCustomer_id(customer_id);
+	}
+
+	public Order(Long id, Customer customer_id) {
+		this.setId(id);
+		this.setCustomer_id(customer_id);
+	}
+
+	public Order(Long id, List<Item> orderItems) {
 		super();
-		this.customer_id = customer_id;
 		this.id = id;
-		this.totalprice = totalprice;
-		this.date = date;
+		this.OrderItems = orderItems;
 	}
 
 	public Customer getCustomer_id() {
@@ -42,23 +73,23 @@ public class Order {
 		this.totalprice = totalprice;
 	}
 
-	public String getDate() {
-		return date;
+	public List<Item> getOrderItems() {
+		return OrderItems;
 	}
 
-	public void setDate(String date) {
-		this.date = date;
+	public void setOrderItems(List<Item> orderItems) {
+		OrderItems = orderItems;
 	}
 
 	@Override
 	public String toString() {
-		return "Order [customer_id=" + customer_id + ", id=" + id + ", totalprice=" + totalprice + ", date=" + date
-				+ "]";
+		return "Order [id=" + id + ", customer_id=" + customer_id + ", totalprice=" + totalprice + ", OrderItems="
+				+ OrderItems + "]";
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(customer_id, date, id, totalprice);
+		return Objects.hash(OrderItems, customer_id, id, totalprice);
 	}
 
 	@Override
@@ -70,9 +101,8 @@ public class Order {
 		if (getClass() != obj.getClass())
 			return false;
 		Order other = (Order) obj;
-		return Objects.equals(customer_id, other.customer_id) && Objects.equals(date, other.date)
+		return Objects.equals(OrderItems, other.OrderItems) && Objects.equals(customer_id, other.customer_id)
 				&& Objects.equals(id, other.id)
 				&& Double.doubleToLongBits(totalprice) == Double.doubleToLongBits(other.totalprice);
 	}
-
 }
