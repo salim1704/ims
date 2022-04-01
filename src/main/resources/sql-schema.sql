@@ -23,7 +23,6 @@ CREATE TABLE IF NOT EXISTS `ims`.`items` (
     `id` bigint(11) NOT NULL AUTO_INCREMENT,
     `customer_id` bigint(11) NOT NULL,
     `totalprice` decimal (6,2) NOT NULL,
-    `dateplaced` date not null,
     PRIMARY KEY (`id`),
     FOREIGN KEY (`customer_id`) REFERENCES customers(`id`)
 );
@@ -36,3 +35,4 @@ CREATE TABLE IF NOT EXISTS `ims`.`order_items` (
     FOREIGN KEY (`order_id`) REFERENCES orders(`id`),
     FOREIGN KEY (`item_id`) REFERENCES items(`id`)
 );
+
