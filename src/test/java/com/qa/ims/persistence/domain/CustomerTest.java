@@ -18,7 +18,7 @@ public class CustomerTest {
 		Customer customer = new Customer("Peter", "Parker");
 		assertEquals("Peter", customer.getFirstName());
 		assertEquals("Parker", customer.getSurname());
-
+ 
 	}
 
 	@Test
