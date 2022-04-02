@@ -73,7 +73,8 @@ public class Item {
 			return false;
 		Item other = (Item) obj;
 		return Objects.equals(id, other.id) && Objects.equals(name, other.name)
-				&& Double.doubleToLongBits(price) == Double.doubleToLongBits(other.price) && stock == other.stock;
+				&& Double.doubleToLongBits(price) == Double.doubleToLongBits(other.price)
+				&& Objects.equals(stock, other.stock);
 	}
 
 }
