@@ -9,7 +9,6 @@ DROP TABLE  orders;
 DROP TABLE  items;
 DROP TABLE  customers;
 
-
 CREATE TABLE IF NOT EXISTS `ims`.`customers` (
 `id` INT(11) NOT NULL AUTO_INCREMENT,
 `first_name` VARCHAR(64) DEFAULT NULL,
@@ -32,7 +31,6 @@ CREATE TABLE IF NOT EXISTS `ims`.`orders` (
 PRIMARY KEY (`id`),
 FOREIGN KEY (`customer_id`) REFERENCES customers(`id`) ON DELETE CASCADE
 );
-
 
 CREATE TABLE IF NOT EXISTS `ims`.`order_items` (
 `order_id` INT NOT NULL,
