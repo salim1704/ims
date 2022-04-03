@@ -9,20 +9,20 @@ public class Item {
 	private Long stock;
 
 	public Item(String name, double price, Long stock) {
-		this.setname(name);
+		this.setName(name);
 		this.setPrice(price);
 		this.setStock(stock);
 	}
 
 	public Item(Long id, String name, double price, Long stock) {
 		this.setId(id);
-		this.setname(name);
+		this.setName(name);
 		this.setPrice(price);
 		this.setStock(stock);
 	}
 
 	public Item(String name, double price, long stock, long id) {
-		this.setname(name);
+		this.setName(name);
 		this.setPrice(price);
 		this.setStock(stock);
 		this.setId(id);
@@ -40,7 +40,7 @@ public class Item {
 		return name;
 	}
 
-	public void setname(String name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 

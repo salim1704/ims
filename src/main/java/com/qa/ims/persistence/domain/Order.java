@@ -49,6 +49,13 @@ public class Order {
 		this.OrderItems = orderItems;
 	}
 
+	public Order(long id, long customer_id, double totalprice) {
+	}
+
+	public Order(Long customer_id) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public Customer getCustomer_id() {
 		return customer_id;
 	}
@@ -105,4 +112,5 @@ public class Order {
 				&& Objects.equals(id, other.id)
 				&& Double.doubleToLongBits(totalprice) == Double.doubleToLongBits(other.totalprice);
 	}
+
 }

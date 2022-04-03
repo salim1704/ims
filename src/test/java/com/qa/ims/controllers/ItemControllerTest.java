@@ -63,7 +63,7 @@ public class ItemControllerTest {
 	
 	@Test
 	public void testUpdate() {
-		Item updated = new Item(1L, "Blu-Ray", 10.99,6L);
+		Item updated = new Item(1L, "Gloves", 5.99D, 4L);
 
 		Mockito.when(this.utils.getLong()).thenReturn(1L);
 		Mockito.when(this.utils.getString()).thenReturn(updated.getName());

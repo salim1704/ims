@@ -40,21 +40,21 @@ public class OrderDAO implements Dao<Order> {
 	}
 
 	public List<Item> getItemsInOrder(Long orderId) {
-		List<Item> ListOfItems = new ArrayList<>();
+		List<Item> Itemlist = new ArrayList<>();
 		try (Connection connection = DBUtils.getInstance().getConnection();
 				PreparedStatement statement = connection
 						.prepareStatement("SELECT * FROM order_items WHERE order_id = ?");) {
 			statement.setLong(1, orderId);
 			ResultSet resultSet = statement.executeQuery();
 			while (resultSet.next()) {
-				ListOfItems.add(itemDAO.read(resultSet.getLong("item_id")));
+				Itemlist.add(itemDAO.read(resultSet.getLong("item_id")));
 			}
-			return ListOfItems;
+			return Itemlist;
 		} catch (Exception e) {
 			LOGGER.debug(e);
 			LOGGER.error(e.getMessage());
 		}
-		return ListOfItems;
+		return Itemlist;
 	}
 
 	public List<Order> readAll() {
@@ -73,7 +73,7 @@ public class OrderDAO implements Dao<Order> {
 		return new ArrayList<>();
 	}
 
-	private Order readLatest() {
+	public Order readLatest() {
 		try (Connection connection = DBUtils.getInstance().getConnection();
 				Statement statement = connection.createStatement();
 				ResultSet resultSet = statement.executeQuery("SELECT * FROM orders ORDER BY id DESC LIMIT 1");) {
