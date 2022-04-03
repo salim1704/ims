@@ -31,13 +31,13 @@ public class ItemDAOTest {
 	public void testReadAll() {
 		List<Item> expected = new ArrayList<>();
 		expected.add(new Item(1L, "PS5", 500D, 2L));
-		expected.add(new Item(2L, "Blu-Ray", 10.99, 6L));
+		expected.add(new Item(2L, "blu-ray", 10.99, 6L));
 		assertEquals(expected, DAO.readAll());
 	}
 
 	@Test
 	public void testReadLatest() {
-		assertEquals(new Item(2L, "Blu-Ray", 10.99, 6L), DAO.readLatest());
+		assertEquals(new Item(2L, "blu-ray", 10.99, 6L), DAO.readLatest());
 	}
 
 	@Test
