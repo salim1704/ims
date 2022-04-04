@@ -1,5 +1,7 @@
 Coverage: 69%
+
 # Project: Inventory Management System 
+
 
 This is an inventory management system written in Java that manages a MySQL database. Users can perform basic CRUD functionality on database items in four different tables. The user is able to input customer, item and order information into the system using the CLI.
 
