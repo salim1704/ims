@@ -1,4 +1,4 @@
-Coverage: 70%
+Coverage: 69%
 # Project: Inventory Management System 
 
 This is an inventory management system written in Java that manages a MySQL database. Users can perform basic CRUD functionality on database items in four different tables. The user is able to input customer, item and order information into the system using the CLI.
@@ -18,13 +18,11 @@ git clone https://github.com/salim1704/ims cd ims
 
 What things you need to install the software and how to install them
 
-```
-- Java Version 11 or higher.
-- MySQL Version 8 or higher.
-- Git
-- Maven
+ * Java Version 11 or higher.
+ * MySQL Version 8 or higher.
+ * Git
+ *  Maven
 
-```
 
 ### Installing
 
@@ -125,13 +123,6 @@ Below are a few examples of tests run on my ItemController class
 	}
 ```
 
-## Deployment
-
-Once repo is cloned you will have access to the 'ims' schema. This is kept in the folder src/main/resources/sql-shemas.sql. 
-This will need to have been run so input commands successfully run on the CLI.
-Changes may need to be made to db.properties to allow java to connect with MySQL succesfully.
-
-
 ## Built With
 
 * [Maven](https://maven.apache.org/) - Dependency Management
@@ -153,6 +144,4 @@ This project is licensed under the MIT license - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* 
-* 
+* Hat tip to anyone whose code was used 
