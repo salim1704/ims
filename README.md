@@ -32,7 +32,7 @@ Once repo is cloned you will have access to the 'ims' schema. This is kept in th
 This will need to have been run so input commands successfully run on the Command line interface.
 Changes may need to be made to db.properties to allow java to connect with MySQL succesfully.
 
-You can execute the file through your command line, using the follwing command:
+You can execute the file through your command line, using the following command:
 
 ```
 java -jar target/ims-0.0.1-jar-with-dependencies.jar
